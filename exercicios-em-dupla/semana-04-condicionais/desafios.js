@@ -27,7 +27,12 @@
        }
    RESULTADO ESPERADO: 🚌 675P na plataforma! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let chegou = true;
+if (chegou) {
+  console.log("🚌 675P na plataforma!");
+} else {
+  console.log("Silêncio, o busão não chegou.");
+}
 
 /* ═══ EXERCÍCIO 2 — 🎂 Entra ou não entra? ═══
    CONTEXTO: portaria do rolê 18+.
@@ -36,7 +41,23 @@
    DICA: o else é o caminho de "todo o resto".
    RESULTADO ESPERADO: Hoje não, campeão */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let idade = 17;
+if (idade >= 18) {
+  console.log("Pode entrar");
+} else {
+  console.log("Hoje não, campeão");
+}
+switch (idade) {
+  case 18:
+    console.log("Idade mínima atingida.");
+    break;
+  case 17:
+    console.log("Ainda não pode entrar.");
+    break;
+  default:
+    console.log("Idade não especificada.");
+}
+console.log("Idade final: " + idade);
 
 /* ═══ EXERCÍCIO 3 — 🎓 Aprovado, recuperação ou reprovado? ═══
    CONTEXTO: a nota da UC saiu!
@@ -50,7 +71,25 @@
    DICA: a ORDEM dos testes importa — comece pelo maior.
    RESULTADO ESPERADO: Recuperação 📚 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let nota = 5;
+if (nota >= 7) {
+   console.log("Aprovado! 🎉");
+} else if (nota >= 5) {
+   console.log("Recuperação 📚");
+} else {
+   console.log("Reprovado 😞");
+}
+switch (nota) {
+   case 10:
+      console.log("Nota máxima! 🎉");
+      break;
+   case 5:
+      console.log("Nota média.");
+      break;
+   default:
+      console.log("Nota abaixo da média.");
+}
+console.log("Nota final: " + nota);
 
 /* ═══ EXERCÍCIO 4 — 🍨 Quem paga o açaí? ═══
    CONTEXTO: par ou ímpar para decidir quem paga o açaí depois
@@ -60,6 +99,12 @@
    DICA: par é quando  numero % 2 === 0
    RESULTADO ESPERADO: ÍMPAR — perdeu, paga o açaí 🍨 */
 // ✍️ SOLUÇÃO DA DUPLA:
+let numero = 7;
+if (numero % 2 === 0) {
+   console.log("PAR - você venceu!");
+} else {
+   console.log("ímpar - perdeu, paga a açaí 🍨");
+}
 
 
 /* ═══ EXERCÍCIO 5 — 📅 Promoção do dia (switch) ═══
