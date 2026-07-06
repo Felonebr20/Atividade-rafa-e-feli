@@ -29,7 +29,11 @@
    DICA: texto vai entre aspas; número vai sem aspas.
    RESULTADO ESPERADO (exemplo): Duda / 19 / Santo Amaro */
 // ✍️ SOLUÇÃO DA DUPLA:
+let Nome = "Felipe"
+let idade = 21
+let bairro = "jardim primaveira"
 
+console.log(Nome, idade, bairro)
 
 /* ═══ EXERCÍCIO 2 — 🚌 Recarga do bilhete único ═══
    CONTEXTO: você está no Terminal Santo Amaro com R$ 3,50 no
