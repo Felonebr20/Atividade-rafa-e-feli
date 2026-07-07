@@ -191,19 +191,8 @@ switch (saldoBanco) {
    RESULTADO ESPERADO (exemplo):
    Meu nome é Duda, tenho 19 anos e moro em Santo Amaro. */
 // ✍️ SOLUÇÃO DA DUPLA:
-
 let fraseApresentacao = "Meu nome é " + Nome + ", tenho " + idade + " anos e moro em " + bairro + ".";
-console.log(fraseApresentacao);
-switch (bairro) {
-  case "Santo Amaro":
-    console.log("Bairro: Santo Amaro");
-    break;
-  case "Centro":
-    console.log("Bairro: Centro");
-    break;
-  default:
-    console.log("Bairro: desconhecido");
-}
+
 /* ═══ EXERCÍCIO 13 — 🖥️ Aparecer NA PÁGINA (DOM) ═══
    CONTEXTO: console é para dev; usuário vê a PÁGINA. Hora do DOM!
    O desafios.html tem um elemento com id="saida".
@@ -216,19 +205,9 @@ switch (bairro) {
        document.getElementById("umId").textContent = "um texto";
    RESULTADO ESPERADO: a frase aparece na caixa da página. */
 // ✍️ SOLUÇÃO DA DUPLA:
-let saidaElemento = document.getElementById("saida");
-saidaElemento.textContent = fraseApresentacao;
-console.log("Frase do exercício 12 escrita na página.");
-switch (bairro) {
-  case "Santo Amaro":
-    saidaElemento.textContent += " Bairro: Santo Amaro";
-    break;
-  case "Centro":
-    saidaElemento.textContent += " Bairro: Centro";
-    break;
-  default:
-    saidaElemento.textContent += " Bairro: desconhecido";
-} 
+let elementoSaida = document.getElementById("saida");
+elementoSaida.textContent = fraseApresentacao;
+console.log("Frase de apresentação escrita na página.");
 
 /* ═══ EXERCÍCIO 14 — ⌨️ Lendo o input ═══
    CONTEXTO: o usuário digita o nome dele — você lê.
@@ -241,7 +220,7 @@ switch (bairro) {
       1º pego o input pelo id ("nomeInput")
       2º o .value me dá o que a pessoa digitou
       3º monto a frase de boas-vindas com +
-      4º escrevo no "saida" — exatamente como no ex. 13
+      4º escrevo no "saida14" — exatamente como no ex. 13
    DICA: valor de input =  document.getElementById("nomeInput").value
    RESULTADO ESPERADO: digitou "Rebeca" e clicou → Bem-vindo(a), Rebeca! */
 function aoClicar() {
@@ -251,6 +230,7 @@ function aoClicar() {
 }
 document.getElementById("btn").addEventListener("click", aoClicar);
 console.log("Função aoClicar configurada para o botão.");
+
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: rachando a pizza ═══
    CONTEXTO: pizza da vitória de novo 🍕 — agora com conta de verdade.
@@ -275,6 +255,7 @@ let cadaUmPaga = total / numeroAmigos;
 
 console.log("Cada um paga: R$ " + cadaUmPaga);
 document.getElementById("saida").textContent = "Cada um paga: R$ " + cadaUmPaga;
+
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA

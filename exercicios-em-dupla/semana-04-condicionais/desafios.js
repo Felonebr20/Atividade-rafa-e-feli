@@ -105,6 +105,16 @@ if (numero % 2 === 0) {
 } else {
    console.log("ímpar - perdeu, paga a açaí 🍨");
 }
+switch (numero % 2) {
+   case 0:
+      console.log("PAR - você venceu!");
+      break;
+   case 1:
+      console.log("ÍMPAR - perdeu, paga o açaí 🍨");
+      break;
+   default:
+      console.log("Número inválido.");
+}
 
 
 /* ═══ EXERCÍCIO 5 — 📅 Promoção do dia (switch) ═══
@@ -120,16 +130,20 @@ if (numero % 2 === 0) {
    DICA: não esqueça o break — sem ele o switch "vaza" pro próximo.
    RESULTADO ESPERADO: caldo de cana em dobro */
 // ✍️ SOLUÇÃO DA DUPLA:
-
-
-/* ═══ EXERCÍCIO 6 — 🎫 Meia ou inteira? (ternário) ═══
-   CONTEXTO: cinema no Shopping. Estudante paga meia.
-   TAREFA: crie 'estudante' (true) e resolva NUMA LINHA SÓ com o
-   operador ternário, mostrando "Meia: R$ 15" ou "Inteira: R$ 30".
-   EXEMPLO (molde):  let msg = temSol ? "praia" : "filme em casa";
-   RESULTADO ESPERADO: Meia: R$ 15 */
-// ✍️ SOLUÇÃO DA DUPLA:
-
+let dia = "quarta";
+switch (dia) {
+   case "segunda":
+      console.log("Pastel R$ 5");
+      break;
+   case "quarta":
+      console.log("Caldo de cana em dobro");
+      break;
+   case "sexta":
+      console.log("Combo R$ 15");
+      break;
+   default:
+      console.log("Sem promoção hoje 😢");
+}
 
 /* ═══ EXERCÍCIO 7 — 🪪 Balada: RG *E* 18+ ═══
    CONTEXTO: na porta da balada conferem as DUAS coisas.
@@ -139,7 +153,14 @@ if (numero % 2 === 0) {
    ('idade' já existe no exercício 2 — por isso o nome novo!)
    RESULTADO ESPERADO: Barrado no baile */
 // ✍️ SOLUÇÃO DA DUPLA:
+let idadeBalada = 19;
+let temRG = false;
 
+if (idadeBalada >= 18 && temRG) {
+   console.log("Entrou! 🎉");
+} else {
+   console.log("Barrado no baile");
+}
 
 /* ═══ EXERCÍCIO 8 — 💸 Desconto: estudante OU aniversariante ═══
    CONTEXTO: a pizzaria dá 20% se você é estudante OU se é seu
