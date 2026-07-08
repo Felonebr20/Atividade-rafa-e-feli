@@ -169,6 +169,13 @@ if (idadeBalada >= 18 && temRG) {
    mostre "Tem desconto!" ou "Preço cheio" usando ||.
    RESULTADO ESPERADO: Tem desconto! */
 // ✍️ SOLUÇÃO DA DUPLA:
+let ehEstudante = false;
+let ehAniversario = true;
+if (ehEstudante || ehAniversario) {
+   console.log("Tem desconto!");
+} else {
+   console.log("Preço cheio");
+}
 
 
 /* ═══ EXERCÍCIO 9 — 🛡️ Campo vazio não passa ═══
@@ -178,7 +185,12 @@ if (idadeBalada >= 18 && temRG) {
    DICA: vazio é  nomeDigitado === ""
    RESULTADO ESPERADO: ⚠️ Preencha o nome! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+   let nomeDigitado = "";
+   if (nomeDigitado === "") {
+      console.log("⚠️ Preencha o nome!");
+   } else {
+      console.log("Cadastro ok");
+   }
 
 /* ═══ EXERCÍCIO 10 — 🛡️ Número que não é número ═══
    CONTEXTO: alguém digitou "abc" no valor da recarga do bilhete 🚌.
@@ -187,7 +199,12 @@ if (idadeBalada >= 18 && temRG) {
    DICA: isNaN(x) devolve true quando x é NaN.
    RESULTADO ESPERADO: ⚠️ Valor inválido */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let valor = Number("abc");
+if (isNaN(valor)) {
+   console.log("⚠️ Valor inválido");
+} else {
+   console.log(valor);
+}
 
 /* ═══ EXERCÍCIO 11 — 🏧 O caixa eletrônico desconfiado ═══
    CONTEXTO: sacar dinheiro tem DUAS regras: ter saldo E o valor
@@ -203,7 +220,15 @@ if (idadeBalada >= 18 && temRG) {
    DICA: if / else if / else — e teste também com saque = 30 e 200.
    RESULTADO ESPERADO (com 35): Só notas de 10! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let saldoConta = 100;
+let saque = 35;
+if (saque > saldoConta) {
+   console.log("Saldo insuficiente");
+} else if (saque % 10 !== 0) {
+   console.log("Só notas de 10!");
+} else {
+   console.log("💵 Pode sacar");
+}
 
 /* ═══ EXERCÍCIO 12 — 🔧 REFATORE este código feio ═══
    CONTEXTO: um colega escreveu isto (funciona, mas está horrível):
@@ -222,7 +247,16 @@ if (idadeBalada >= 18 && temRG) {
    DICA: quem começa pelo maior nunca precisa do "e menor que".
    RESULTADO ESPERADO: Prata */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let pontos = 85;
+if (pontos >= 90) {
+   console.log("Ouro");
+} else if (pontos >= 70) {
+   console.log("Prata");
+} else if (pontos >= 50) {
+   console.log("Bronze");
+} else {
+   console.log("Sem medalha");
+}
 
 /* ═══ EXERCÍCIO 13 — 🍕 Guard clause: pare cedo ═══
    CONTEXTO: dividir a pizza da vitória entre 0 pessoas quebra a
@@ -237,6 +271,9 @@ if (idadeBalada >= 18 && temRG) {
    DICA: if + return no COMEÇO da função — o resto nem roda. */
 function dividirPizza(valor, pessoas) {
   // ✍️ SOLUÇÃO DA DUPLA (a guard clause vem AQUI):
+  if (pessoas <= 0) {
+    return "⚠️ Precisa de pelo menos 1 pessoa!";
+  }
 
   return "Cada um paga R$ " + (valor / pessoas);
 }
@@ -253,6 +290,12 @@ console.log(dividirPizza(60, 4)); // Cada um paga R$ 15
          total = total * 0.9;
    RESULTADO ESPERADO: Corrida: R$ 26.1 */
 // ✍️ SOLUÇÃO DA DUPLA:
+let km = 12;
+let total = 5 + (2 * km);
+if (km >= 10) {
+   total = total * 0.9;
+}
+console.log("Corrida: R$ " + total);
 
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: posso pedir pizza? ═══
@@ -271,13 +314,24 @@ console.log(dividirPizza(60, 4)); // Cada um paga R$ 15
    BÔNUS para a dupla: testem as 4 combinações de a/b e anotem.
    RESULTADO ESPERADO: 🍕 PEDE A PIZZA! */
 // ✍️ SOLUÇÃO DA DUPLA:
+let grana = 60;
+let fimDeSemana = false;
+let brasilJoga = true;
 
+if (grana >= 50 && (fimDeSemana || brasilJoga)) {
+   console.log("🍕 PEDE A PIZZA!");
+} else {
+   console.log("Miojo hoje 🍜");
+}
 
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
    [ ] Todas as saídas batem com o resultado esperado?
+     sim, testamos com console.log() e conferimos.
    [ ] Os DOIS sabem explicar cada if via código?
+     mais ou menos, mas conseguimos explicar a lógica.
    [ ] Commit nos DOIS GitHubs:
+     sim, com a mensagem:
         git commit -m "Semana 04 resolvida — dupla X & Y"
    ============================================================ */

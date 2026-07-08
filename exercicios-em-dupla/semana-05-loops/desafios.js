@@ -31,7 +31,12 @@
    DICA: o n-- é quem impede o loop infinito. Nunca esqueça dele.
    RESULTADO ESPERADO: 3 / 2 / 1 / ⚽ GOOOOL! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let n = 3;
+while (n > 0) {
+  console.log(n);
+  n--;
+}  
+console.log("⚽ GOOOOL!");
 
 /* ═══ EXERCÍCIO 2 — 💰 Juntando grana para o rolê ═══
    CONTEXTO: o show custa R$ 120. Você guarda R$ 25 por semana.
@@ -47,8 +52,20 @@
    RESULTADO ESPERADO:
    Semana 1: R$ 25 ... Semana 5: R$ 125 / 🎫 Deu! Bora pro show! */
 // ✍️ SOLUÇÃO DA DUPLA:
+let guardado = 0;
+let semana = 0;
 
+while (guardado < 120) {
+  semana++;
+  guardado += 25;
+  console.log(`Semana ${semana}: R$ ${guardado}`);
+}
 
+console.log("🎫 Deu! Bora pro show!");
+switch (semana) {
+  case 1:
+    console.log("Você conseguiu juntar o dinheiro em apenas 1 semana!");   
+}
 /* ═══ EXERCÍCIO 3 — 🔐 A senha do wifi (do-while) ═══
    CONTEXTO: você tenta a senha do wifi da lanchonete ATÉ acertar —
    mas tenta pelo menos UMA vez, sempre.
@@ -59,8 +76,17 @@
    por isso roda pelo menos uma vez.
    RESULTADO ESPERADO: Tentativa 1... / 2... / 3... / 🔓 Conectou! */
 // ✍️ SOLUÇÃO DA DUPLA:
+let tentativa = 1;
+do {
+  console.log(`Tentativa ${tentativa}...`);
+  tentativa++;
+} while (tentativa <= 3);
 
-
+console.log("🔓 Conectou!");
+switch (tentativa) {
+  case 1:
+    console.log("Você conseguiu conectar na primeira tentativa!");   
+}
 /* ═══ EXERCÍCIO 4 — 📣 A torcida no busão ═══
    CONTEXTO: a torcida voltando do jogo grita 5 vezes no 675P.
    TAREFA: use for para mostrar "Grito 1: BRASIL! 🇧🇷" até o 5.
@@ -70,6 +96,10 @@
        }
    RESULTADO ESPERADO: Grito 1 ... Grito 5 (cinco linhas) */
 // ✍️ SOLUÇÃO DA DUPLA:
+let grito = 5;
+for (let i = 1; i <= grito; i++) {
+  console.log(`Grito ${i}: BRASIL! 🇧🇷`);
+}
 
 
 /* ═══ EXERCÍCIO 5 — ✖️ Tabuada do 7 ═══
@@ -79,7 +109,9 @@
    DICA: dentro do loop:  console.log("7 x " + i + " = " + (7 * i));
    RESULTADO ESPERADO: 10 linhas, de 7 x 1 = 7 até 7 x 10 = 70 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+for (let i = 1; i <= 10; i++) {
+  console.log(`7 x ${i} = ${7 * i}`);
+}
 
 /* ═══ EXERCÍCIO 6 — 💸 Quanto foi a semana? ═══
    CONTEXTO: seus gastos da semana estão na lista abaixo
@@ -90,7 +122,11 @@ let gastos = [8.8, 15, 12, 20, 30];
 /* DICA: for (let i = 0; i < gastos.length; i++) { total = total + gastos[i]; }
    RESULTADO ESPERADO: Total da semana: R$ 85.8 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let total = 0;
+for (let i = 0; i < gastos.length; i++) {
+  total = total + gastos[i];
+}
+console.log(`Total da semana: R$ ${total}`);
 
 /* ═══ EXERCÍCIO 7 — 🍕 A lista da pizza (for...of) ═══
    CONTEXTO: convidados confirmados para a pizza da vitória: */
@@ -104,7 +140,9 @@ let convidados = ["Duda", "Rebeca", "João", "Vitor"];
    DICA: o for...of te dá o ITEM direto — sem [i], sem length.
    RESULTADO ESPERADO: 4 linhas de confirmação */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+for (let convidado of convidados) {
+  console.log(`🍕 ${convidado} confirmou!`);
+}
 
 /* ═══ EXERCÍCIO 8 — 🎂 Quantos podem ir na balada? ═══
    CONTEXTO: as idades da galera: */
@@ -120,7 +158,13 @@ let idades = [17, 19, 22, 16, 18];
    quando o if deixa.
    RESULTADO ESPERADO: Liberados: 3 de 5 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let liberados = 0;
+for (let i = 0; i < idades.length; i++) {
+  if (idades[i] >= 18) {
+    liberados++;
+  }
+}
+console.log(`Liberados: ${liberados} de 5`);
 
 /* ═══ EXERCÍCIO 9 — 🎆 Réveillon na Paulista ═══
    CONTEXTO: contagem regressiva do ano novo!
@@ -128,7 +172,11 @@ let idades = [17, 19, 22, 16, 18];
    DICA: for (let i = 10; i >= 1; i--)
    RESULTADO ESPERADO: 10, 9, ..., 1, 🎆 FELIZ ANO NOVO! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let contagem = 10;
+for (let i = contagem; i >= 1; i--) {
+  console.log(i);
+}
+console.log("🎆 FELIZ ANO NOVO!");
 
 /* ═══ EXERCÍCIO 10 — 🎓 A média da turma ═══
    CONTEXTO: as notas do grupo de estudos: */
@@ -140,7 +188,12 @@ let notas = [7, 9, 6, 10, 8];
    já nasceu no exercício 6, e um let só nasce uma vez!
    RESULTADO ESPERADO: Média da turma: 8 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let soma = 0;
+for (let i = 0; i < notas.length; i++) {
+  soma = soma + notas[i];
+}
+let media = soma / notas.length;
+console.log(`Média da turma: ${media}`);
 
 /* ═══ EXERCÍCIO 11 — 🍕 Cardápio combinado (loop aninhado) ═══
    CONTEXTO: a pizzaria monta o cardápio combinando cada sabor
@@ -157,6 +210,11 @@ let bordas = ["catupiry", "cheddar"];
    DICA: o de fora anda nos sabores; o de dentro, nas bordas.
    RESULTADO ESPERADO: 6 combinações (3 x 2) */
 // ✍️ SOLUÇÃO DA DUPLA:
+for (let sabor of sabores) {
+  for (let borda of bordas) {
+    console.log(`${sabor} com borda de ${borda}`);
+  }
+}
 
 
 /* ═══ EXERCÍCIO 12 — 🚌 Achou, parou (break) ═══
@@ -169,7 +227,13 @@ let linhas = ["637P", "695X", "675P", "746A", "709M"];
    RESULTADO ESPERADO: vendo: 637P / vendo: 695X / 🚌 Achei o 675P!
    (746A e 709M NÃO aparecem) */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+for (let linha of linhas) {
+  console.log(`vendo: ${linha}`);
+  if (linha === "675P") {
+    console.log("🚌 Achei o 675P!");
+    break;
+  }
+}
 
 /* ═══ EXERCÍCIO 13 — 🧾 Pulando os zerados (continue) ═══
    CONTEXTO: extrato do mês — dias sem gasto aparecem como 0 e
@@ -180,7 +244,12 @@ let extrato = [12, 0, 25, 0, 8];
    DICA: continue = "pula ESTA volta e segue para a próxima".
    RESULTADO ESPERADO: gasto: R$ 12 / gasto: R$ 25 / gasto: R$ 8 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+for (let valor of extrato) {
+  if (valor === 0) {
+    continue;
+  }
+  console.log(`gasto: R$ ${valor}`);
+}
 
 /* ═══ EXERCÍCIO 14 — 🐛 CONSERTE o loop infinito ═══
    CONTEXTO: um colega escreveu isto e a aba dele TRAVOU:
@@ -194,7 +263,11 @@ let extrato = [12, 0, 25, 0, 8];
    condição do false.
    RESULTADO ESPERADO: Faltam 5... até Faltam 1... e o loop PARA. */
 // ✍️ SOLUÇÃO DA DUPLA (a versão consertada):
-
+let fila = 5;
+while (fila > 0) {
+  console.log("Faltam " + fila + " pessoas na fila do RG");
+  fila--; // Adicionando esta linha para que a condição mude e o loop não seja infinito
+}
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: fechamento do caixa ═══
    CONTEXTO: sexta de jogo do Brasil, a lanchonete vendeu MUITO: */
@@ -213,7 +286,18 @@ let vendas = [35, 80, 12, 95, 47, 60];
    BÔNUS para discutir: por que 'maior' começa em 0 e não em 100?
    RESULTADO ESPERADO: Total: R$ 329 / Maior venda: R$ 95 */
 // ✍️ SOLUÇÃO DA DUPLA:
+let totalVendas = 0;
+let maiorVenda = 0;
 
+for (let i = 0; i < vendas.length; i++) {
+  totalVendas = totalVendas + vendas[i];
+  if (vendas[i] > maiorVenda) {
+    maiorVenda = vendas[i];
+  }
+}
+
+console.log(`Total: R$ ${totalVendas}`);
+console.log(`Maior venda: R$ ${maiorVenda}`);
 
 
 /* ============================================================

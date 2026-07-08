@@ -28,7 +28,12 @@
    DICA: criou e não apareceu nada? Faltou CHAMAR.
    RESULTADO ESPERADO: a frase 3 vezes */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let vinheta = () => {
+  console.log("📻 Você ouve a Rádio Largo 13!");
+}
+vinheta();
+vinheta();
+vinheta();  
 
 /* ═══ EXERCÍCIO 2 — 🎤 Chamando a galera pelo nome ═══
    CONTEXTO: o MC do rolê chama cada um pelo nome.
@@ -37,7 +42,11 @@
    DICA: o parâmetro é a ENTRADA — cada chamada, um valor.
    RESULTADO ESPERADO: 🎤 Sobe aí, Duda! / 🎤 Sobe aí, João! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let chamar = (nome) => {
+  console.log("🎤 Sobe aí, " + nome + "!");
+}
+chamar("Duda");
+chamar("João");
 
 /* ═══ EXERCÍCIO 3 — 💵 O dobro do cachê ═══
    CONTEXTO: seu primeiro freela de site pagou X; o segundo
@@ -48,7 +57,11 @@
    de quem chamou.
    RESULTADO ESPERADO: 300 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let dobro = (valor) => {
+  return valor * 2;
+}
+let resultado = dobro(150);
+console.log(resultado);
 
 /* ═══ EXERCÍCIO 4 — 🍕 Rachando a conta (2 parâmetros) ═══
    CONTEXTO: pizza + refri, dividido entre a galera.
@@ -56,7 +69,10 @@
    Mostre rachar(72, 4).
    RESULTADO ESPERADO: 18 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let rachar = (valorTotal, pessoas) => {   
+  return valorTotal / pessoas;
+}
+console.log(rachar(72, 4));
 
 /* ═══ EXERCÍCIO 5 — 🏹 A versão arrow ═══
    CONTEXTO: no trampo você vai ver MUITO essa sintaxe curta.
@@ -67,7 +83,8 @@
    DICA: nome NOVO de propósito — redeclarar 'dobro' dá erro.
    RESULTADO ESPERADO: 42 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let dobroSeta = (valor) => valor * 2;
+console.log(dobroSeta(21));
 
 /* ═══ EXERCÍCIO 6 — 👋 Parâmetro padrão ═══
    CONTEXTO: o sistema de cadastro saúda o usuário — e quando
@@ -77,6 +94,11 @@
    RESULTADO ESPERADO:
    Bem-vindo(a), visitante! / Bem-vindo(a), Rebeca! */
 // ✍️ SOLUÇÃO DA DUPLA:
+let saudar = (nome = "visitante") => {
+  console.log("Bem-vindo(a), " + nome + "!");
+}
+saudar();
+saudar("Rebeca");
 
 
 /* ═══ EXERCÍCIO 7 — 🔭 Escopo: onde a variável vive ═══
@@ -98,6 +120,8 @@ function calcularCache() {
   console.log("dentro: " + cache);
 }
 calcularCache();
+let cache = 1000;   // <- descomente, veja, comente
+
 // console.log("fora: " + cache);   // <- descomente, veja, comente
 
 
@@ -113,7 +137,18 @@ calcularCache();
    DICA: if / else if / else DENTRO da função, com return em cada.
    RESULTADO ESPERADO: Ainda não vota / Voto opcional / Voto obrigatório */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let situacaoVoto = (idade) => {
+  if (idade >= 18) {
+    return "Voto obrigatório";
+  } else if (idade >= 16) {
+    return "Voto opcional";
+  } else {
+    return "Ainda não vota";
+  }
+};
+console.log(situacaoVoto(15));
+console.log(situacaoVoto(17));
+console.log(situacaoVoto(20));
 
 /* ═══ EXERCÍCIO 9 — 📋 O corre da semana (array básico) ═══
    CONTEXTO: sua agenda da semana num array.
@@ -123,7 +158,10 @@ calcularCache();
    DICA: último =  corre[corre.length - 1]
    RESULTADO ESPERADO: aula / freela / 4 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let corre = ["aula", "estágio", "academia", "freela"];
+console.log(corre[0]);
+console.log(corre[corre.length - 1]);
+console.log(corre.length);
 
 /* ═══ EXERCÍCIO 10 — 🛒 A lista da feira (push/pop) ═══
    CONTEXTO: feira de domingo em Santo Amaro.
@@ -132,7 +170,11 @@ calcularCache();
    pop; mostre a lista final.
    RESULTADO ESPERADO: ["banana", "tomate", "pastel"] */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let lista = ["banana", "tomate"];
+lista.push("pastel");
+lista.push("caldo de cana");
+lista.pop();
+console.log(lista);
 
 /* ═══ EXERCÍCIO 11 — 🔍 Tem pastel? (includes) ═══
    CONTEXTO: conferindo a lista antes de sair de casa.
@@ -141,7 +183,10 @@ calcularCache();
    EXEMPLO (molde):  lista.includes("item")  → true/false
    RESULTADO ESPERADO: true / false */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let temPastel = lista.includes("pastel");
+let temPicanha = lista.includes("picanha");
+console.log(temPastel);
+console.log(temPicanha);
 
 /* ═══ EXERCÍCIO 12 — 🧮 Função que soma lista ═══
    CONTEXTO: o padrão que você usará a carreira inteira: função
@@ -157,7 +202,15 @@ calcularCache();
    DICA: acumulador dentro, return no fim, console.log fora.
    RESULTADO ESPERADO: 60 / 35.8 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let somarLista = (numeros) => {
+  let total = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    total += numeros[i];
+  }
+  return total;
+};
+console.log(somarLista([10, 20, 30]));
+console.log(somarLista([8.8, 15, 12]));
 
 /* ═══ EXERCÍCIO 13 — 🎓 Contando aprovados ═══
    CONTEXTO: as notas da turma saíram: */
@@ -171,7 +224,16 @@ let notasTurma = [8, 4, 7, 9, 5, 10];
    DICA: contador + for + if — tudo DENTRO da função.
    RESULTADO ESPERADO: 4 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let contarAprovados = (notas) => {
+  let contador = 0;
+  for (let i = 0; i < notas.length; i++) {
+    if (notas[i] >= 7) {
+      contador++;
+    }
+  }
+  return contador;
+};
+console.log(contarAprovados(notasTurma));
 
 /* ═══ EXERCÍCIO 14 — 📣 Função + for...of ═══
    CONTEXTO: o professor faz a chamada da TI116.
@@ -180,8 +242,12 @@ let notasTurma = [8, 4, 7, 9, 5, 10];
    Chame com ["Duda", "Rebeca", "Vitor"].
    RESULTADO ESPERADO: 3 linhas de presença */
 // ✍️ SOLUÇÃO DA DUPLA:
-
-
+let fazerChamada = (lista) => {
+  for (let nome of lista) {
+    console.log("✅ " + nome + " presente!");
+  }
+};
+fazerChamada(["Duda", "Rebeca", "Vitor"]);
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: o caixa completo ═══
    CONTEXTO: fim do expediente na lanchonete. As vendas: */
 let vendasDia = [35, 80, 12, 95, 47];
@@ -200,8 +266,22 @@ let vendasDia = [35, 80, 12, 95, 47];
    função reutilizável. Teste também com outro array!
    RESULTADO ESPERADO: Caixa: R$ 269 | Maior venda: R$ 95 */
 // ✍️ SOLUÇÃO DA DUPLA:
+let fecharCaixa = (vendas) => {
+  let total = 0;
+  let maior = vendas[0];
 
+  for (let i = 0; i < vendas.length; i++) {
+    total += vendas[i];
+    if (vendas[i] > maior) {
+      maior = vendas[i];
+    }
+  }
 
+  return `Caixa: R$ ${total} | Maior venda: R$ ${maior}`;
+};
+
+let resultadoCaixa = (vendasDia);
+console.log(resultadoCaixa);
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
